@@ -1,0 +1,87 @@
+/* Estilos base para el elemento (tarjeta de elemento) */
+.element {
+    position: relative; /* Permite posicionamiento absoluto de elementos hijos */
+    border: 1px solid #ddd; /* Borde sutil gris */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 10px 5px; /* Espaciado interno */
+    text-align: center; /* Alineación central del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+    transition: var(--transition); /* Transición suave usando variable CSS */
+    background-color: var(--background-color); /* Color de fondo usando variable */
+    aspect-ratio: 1/1; /* Mantiene relación de aspecto cuadrada */
+    display: flex; /* Usa flexbox para el layout */
+    flex-direction: column; /* Organiza los hijos en columna */
+    justify-content: space-between; /* Distribuye el espacio entre hijos */
+    box-shadow: var(--shadow); /* Sombra usando variable CSS */
+}
+
+/* Efectos al pasar el mouse sobre el elemento */
+.element:hover {
+    transform: scale(1.05); /* Escala ligeramente el elemento */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    z-index: 10; /* Asegura que el elemento elevado se muestre sobre otros */
+}
+
+/* Estilos para el tooltip que aparece al pasar el mouse */
+.element-hover {
+    position: absolute; /* Posicionamiento absoluto relativo al elemento padre */
+    top: 100%; /* Posición inicial debajo del elemento */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrado perfecto */
+    width: 200px; /* Ancho fijo */
+    background-color: var(--background-color); /* Color de fondo usando variable */
+    padding: 1rem; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+    opacity: 0; /* Inicialmente invisible */
+    visibility: hidden; /* Inicialmente oculto */
+    transition: var(--transition); /* Transición suave usando variable */
+    z-index: 100; /* Asegura que aparezca sobre otros elementos */
+    text-align: left; /* Alineación de texto a la izquierda */
+    color: var(--text-color); /* Color de texto usando variable */
+}
+
+/* Muestra el tooltip cuando se pasa el mouse sobre el elemento */
+.element:hover .element-hover {
+    opacity: 1; /* Hace visible el tooltip */
+    visibility: visible; /* Muestra el tooltip */
+    top: calc(100% + 10px); /* Posición final con pequeño margen */
+}
+
+/* Estilos para el número atómico */
+.number {
+    font-size: 0.7rem; /* Tamaño de fuente pequeño */
+    color: var(--text-color); /* Color de texto usando variable */
+    align-self: flex-start; /* Alinea a la izquierda dentro del contenedor flex */
+}
+
+/* Estilos para el símbolo del elemento */
+.symbol {
+    font-size: 1.5rem; /* Tamaño de fuente grande */
+    font-weight: bold; /* Texto en negrita */
+    margin: 5px 0; /* Margen vertical */
+    font-family: 'Orbitron', sans-serif; /* Fuente especial para símbolos */
+    color: var(--primary-color); /* Color usando variable CSS */
+}
+
+/* Estilos para el nombre del elemento */
+.name {
+    font-size: 0.6rem; /* Tamaño de fuente muy pequeño */
+    color: var(--text-color); /* Color de texto usando variable */
+    text-overflow: ellipsis; /* Puntos suspensivos si el texto es muy largo */
+    overflow: hidden; /* Oculta el texto que sobresale */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+/* Estilos para la imagen dentro del elemento */
+.element img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Altura automática para mantener proporción */
+    max-width: 120px; /* Ancho máximo para pantallas pequeñas */
+    transition: transform 0.3s ease; /* Transición suave para efectos hover */
+
+    /* Media query para pantallas más grandes */
+    @media (min-width: 768px) {
+        max-width: 180px; /* Ancho mayor en pantallas grandes */
+    }
+}

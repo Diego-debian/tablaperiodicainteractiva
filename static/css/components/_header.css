@@ -1,0 +1,315 @@
+header {
+    background: linear-gradient(145deg, var(--primary-color), #1a365d);
+    color: var(--light-text);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--noble-gas);
+    transition: var(--transition);
+    text-align: center;
+}
+
+header:hover {
+    background: linear-gradient(145deg, #1a365d, var(--primary-color));
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-title {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.header-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--h1);
+    margin: 0 auto 1rem auto;
+    display: block;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 1400px;
+}
+
+.header-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--h1);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.header-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--alkali-metal), var(--lanthanide));
+    border-radius: 3px;
+}
+
+.header-content i {
+    font-size: 1.8rem;
+    color: var(--reactive-nonmetal);
+    transition: var(--transition);
+}
+
+.header-content i:hover {
+    transform: rotate(15deg) scale(1.1);
+    color: var(--alkaline-earth-metal);
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.header-nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--metalloid);
+    transition: width 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: var(--transition-metal);
+    opacity: 1;
+}
+
+.header-nav a:hover::before {
+    width: 100%;
+}
+
+.header-nav .active {
+    color: var(--alkaline-earth-metal);
+    opacity: 1;
+}
+
+.header-nav .active::before {
+    width: 100%;
+    background: var(--secondary-color);
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--light-text);
+    text-decoration: none;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.back-button:hover {
+    color: var(--alkaline-earth-metal);
+    transform: translateX(-5px);
+}
+
+.back-button i {
+    margin-right: 5px;
+}
+
+/* Efecto de partículas en el header */
+.header-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--noble-gas);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(5px); }
+}
+
+/* Estilos para el contenido de detalles del elemento */
+.element-detail {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: var(--background-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.detail-symbol {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.detail-name h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.detail-name h2 {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detail-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos para los botones de acción */
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.btn-icon {
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-border {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.back-button {
+    color: #fff;
+    background: linear-gradient(135deg, var(--reactive-nonmetal), var(--noble-gas));
+}
+
+.back-button .btn-border {
+    background: linear-gradient(135deg, var(--noble-gas), var(--reactive-nonmetal));
+    opacity: 0;
+}
+
+.edit-button {
+    color: #fff;
+    background: linear-gradient(135deg, var(--lanthanide), var(--alkali-metal));
+}
+
+.edit-button .btn-border {
+    background: linear-gradient(135deg, var(--alkali-metal), var(--lanthanide));
+    opacity: 0;
+}
+
+/* Efectos hover */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.btn:hover .btn-border {
+    opacity: 1;
+}
+
+/* Efecto de pulsación */
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}

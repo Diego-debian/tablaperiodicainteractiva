@@ -1,0 +1,42 @@
+/* Responsive design */
+@media (max-width: 1200px) {
+    .periodic-table {
+        grid-template-columns: repeat(9, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .periodic-table {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-container {
+        max-width: 100%;
+    }
+    
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .periodic-table {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}

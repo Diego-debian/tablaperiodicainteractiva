@@ -1,0 +1,87 @@
+/* Estilos base del footer */
+footer {
+    /* Fondo con degradado diagonal de azules */
+    background: linear-gradient(135deg, var(--primary-color), #2c5282);
+    /* Color de texto claro para contraste */
+    color: var(--light-text);
+    /* Alineación central del contenido */
+    text-align: center;
+    /* Relleno interno: 2.5rem arriba/abajo, 1rem izquierda/derecha */
+    padding: 2.5rem 1rem;
+    /* Margen: 2rem arriba, 5rem izquierda/derecha, 0 abajo */
+    margin: 2rem 5rem 0;
+    /* Bordes redondeados */
+    border-radius: 25px;
+    /* Sombra usando variable predefinida */
+    box-shadow: var(--shadow-hover);
+    /* Posicionamiento relativo para elementos hijos absolutos */
+    position: relative;
+    /* Oculta cualquier contenido que desborde */
+    overflow: hidden;
+    /* Transición suave para efectos hover */
+    transition: var(--transition);
+    /* Borde sutil semi-transparente */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos al pasar el ratón sobre el footer */
+footer:hover {
+    /* Movimiento hacia arriba */
+    transform: translateY(-5px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    /* Degradado invertido para efecto dinámico */
+    background: linear-gradient(135deg, #2c5282, #1a365d);
+}
+
+/* Pseudoelemento decorativo en la parte superior */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /* Barra de colores con degradado horizontal */
+    background: linear-gradient(90deg, 
+        var(--alkali-metal), 
+        var(--reactive-nonmetal), 
+        var(--noble-gas));
+}
+
+/* Estilos para los títulos de sección del footer */
+.footer-section h3 {
+    /* Color corporativo para los títulos */
+    color: var(--secondary-color);
+    /* Espaciado inferior */
+    margin-bottom: 1rem;
+    /* Tamaño de fuente usando variable */
+    font-size: var(--h2);
+}
+
+/* Efecto hover para enlaces en el footer */
+.footer-section a:hover {
+    /* Color corporativo al pasar el ratón */
+    color: var(--secondary-color);
+    /* Desplazamiento horizontal para efecto dinámico */
+    transform: translateX(5px);
+}
+
+/* Efecto hover para iconos de redes sociales */
+.social-links a:hover {
+    /* Fondo con color corporativo */
+    background: var(--secondary-color);
+    /* Efecto de levitación y aumento */
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Efectos decorativos de átomos (partículas circulares) */
+.footer-atom:nth-child(1) {
+    /* Gradiente radial azul claro semi-transparente */
+    background: radial-gradient(circle, rgba(66, 153, 225, 0.1), transparent 70%);
+}
+
+.footer-atom:nth-child(2) {
+    /* Gradiente radial púrpura semi-transparente */
+    background: radial-gradient(circle, rgba(128, 90, 213, 0.1), transparent 70%);
+}

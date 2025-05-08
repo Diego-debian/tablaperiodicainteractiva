@@ -1,0 +1,24 @@
+{% extends 'layouts/_base.html'%}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/utilities/_animations.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/utilities/_responsive.css')}}">
+{% endblock %}
+
+{% include 'components/_header.html' %}
+{% block header %}{% endblock %}
+
+{% block content %}
+{% include 'components/_search.html' %}
+{% include 'components/_legend.html' %}
+{% include 'components/_periodic-table.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/modules/header.js')}}" type="module"></script>
+<script src="{{ url_for('static', filename='js/modules/elements.js')}}" type="module"></script>
+<script src="{{ url_for('static', filename='js/modules/footer.js')}}" type="module"></script>
+<script src="{{ url_for('static', filename='js/modules/search.js')}}" type="module"></script>
+<script src="{{ url_for('static', filename='js/modules/animations.js')}}" type="module"></script>
+{% endblock %}

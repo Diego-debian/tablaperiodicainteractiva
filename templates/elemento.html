@@ -1,0 +1,75 @@
+{% extends 'layouts/_base.html' %}
+
+{% block header %}
+    {% include 'components/_header.html' %}
+    {{ super() }}
+
+    <header>
+        <div class="header-content">
+            <!-- Tu contenido de navegación aquí si lo necesitas -->
+        </div>
+        
+        <div class="header-title">
+            <h2>{{ elemento.name }} - Detalles</h2>
+            <div class="action-buttons">
+                <a href="{{ url_for('index') }}" class="btn back-button">
+                    <span class="btn-icon"><i class="fas fa-arrow-left"></i></span>
+                    <span class="btn-text">Volver a la tabla</span>
+                    <span class="btn-border"></span>
+                </a>
+                <a href="{{ url_for('edit_elemento', number=elemento.number) }}" class="btn edit-button">
+                    <span class="btn-icon"><i class="fas fa-edit"></i></span>
+                    <span class="btn-text">Editar elemento</span>
+                    <span class="btn-border"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="element-detail {{ elemento.category|replace(' ', '-')|lower }}">
+    <div class="detail-header">
+        <div class="detail-symbol">{{ elemento.symbol }}</div>
+        <div class="detail-name">
+            <h1>{{ elemento.name }}</h1>
+            <h2>{{ elemento.atomic_mass }} u</h2>
+        </div>
+    </div>
+
+    <div class="detail-grid">
+        <div class="detail-card">
+            <h3><i class="fas fa-atom"></i> Información Básica</h3>
+            <p><strong>Número atómico:</strong> {{ elemento.number }}</p>
+            <p><strong>Grupo:</strong> {{ elemento.group }}</p>
+            <p><strong>Periodo:</strong> {{ elemento.period }}</p>
+            <p><strong>Categoría:</strong> {{ elemento.category }}</p>
+        </div>
+
+        <div class="detail-card">
+            <h3><i class="fas fa-flask"></i> Propiedades Físicas</h3>
+            <p><strong>Fase:</strong> {{ elemento.phase }}</p>
+            <p><strong>Densidad:</strong> {{ elemento.density }} g/cm³</p>
+            <p><strong>Punto de fusión:</strong> {{ elemento.melt }} K</p>
+            <p><strong>Punto de ebullición:</strong> {{ elemento.boil }} K</p>
+        </div>
+
+        <div class="detail-card">
+            <h3><i class="fas fa-microscope"></i> Estructura Atómica</h3>
+            <p><strong>Configuración electrónica:</strong> {{ elemento.electron_config }}</p>
+            <p><strong>Electronegatividad:</strong> {{ elemento.electronegativity if elemento.electronegativity else 'Desconocida' }}</p>
+        </div>
+
+        <div class="detail-card">
+            <h3><i class="fas fa-history"></i> Historia</h3>
+            <p><strong>Descubrimiento:</strong> {{ elemento.discovery }}</p>
+            <p><strong>Descubridor:</strong> {{ elemento.discoverer }}</p>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h3><i class="fas fa-book-open"></i> Resumen</h3>
+     <p>{{ elemento.summary }}</p>
+    </div>
+</div>
+{% endblock %}

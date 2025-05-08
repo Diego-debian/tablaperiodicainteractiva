@@ -1,0 +1,41 @@
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1rem;
+    
+    @media (min-width: 1200px) {
+      width: 90%;
+      max-width: 1400px;
+    }
+  }

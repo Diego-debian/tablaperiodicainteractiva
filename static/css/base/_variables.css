@@ -1,0 +1,48 @@
+:root {
+    /* ============ PALETA DE COLORES ============ */
+    /* Colores principales para la interfaz */
+    --primary-color: #1a365d;       /* Azul oscuro profesional - Color principal */
+    --secondary-color: #4299e1;     /* Azul corporativo - Color secundario */
+    --background-color: #f8fafc;    /* Color de fondo claro */
+    --text-color: #2d3748;          /* Color principal para texto */
+    --light-text: #ffffff;          /* Color para texto sobre fondos oscuros */
+    --border-color: #e2e8f0;        /* Color para bordes y divisiones */
+
+    /* ===== COLORES PARA CLASIFICACIÓN DE ELEMENTOS ===== */
+    /* Cada categoría de elementos tiene un color distintivo */
+    --alkali-metal: #e53e3e;        /* Rojo - Metales alcalinos */
+    --alkaline-earth-metal: #dd6b20; /* Naranja - Metales alcalinotérreos */
+    --transition-metal: #d69e2e;    /* Amarillo - Metales de transición */
+    --post-transition-metal: #38a169; /* Verde - Metales post-transición */
+    --metalloid: #319795;          /* Verde azulado - Metaloides */
+    --reactive-nonmetal: #3182ce;   /* Azul - No metales reactivos */
+    --noble-gas: #805ad5;          /* Morado - Gases nobles */
+    --lanthanide: #d53f8c;         /* Rosa - Lantánidos */
+    --actinide: #ed64a6;           /* Rosa claro - Actínidos */
+    --unknown: #a0aec0;            /* Gris - Elementos desconocidos/propiedades no confirmadas */
+
+    /* ============ EFECTOS VISUALES ============ */
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);       /* Sombra estándar */
+    --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para hover/efectos */
+    --transition: all 0.3s ease;                   /* Transición suave para animaciones */
+
+    /* ============ TIPOGRAFÍA ============ */
+    --base-size: 1rem;             /* Tamaño base de fuente (16px normalmente) */
+    --scale: 1.25;                 /* Factor de escala para tipografía modular */
+    --h1: calc(var(--base-size) * var(--scale) * 2);  /* Tamaño para encabezados h1 */
+    --h2: calc(var(--base-size) * var(--scale) * 1.5); /* Tamaño para encabezados h2 */
+
+    /* ============ TAMAÑOS DE ELEMENTOS ============ */
+    --element-size: 60px;          /* Tamaño estándar para elementos */
+    --element-size-md: 50px;       /* Tamaño mediano para elementos */
+    --element-size-sm: 40px;       /* Tamaño pequeño para elementos */
+}
+
+/* ============ MEDIA QUERIES ============ */
+/* Ajustes para pantallas medianas/grandes (tablets y escritorios) */
+@media (min-width: 768px) {
+    :root {
+        --base-size: 1.1rem;       /* Aumenta ligeramente el tamaño base de fuente */
+        --element-size: 70px;      /* Aumenta el tamaño estándar de elementos */
+    }
+}

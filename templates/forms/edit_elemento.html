@@ -1,0 +1,110 @@
+{% extends 'layouts/_base.html' %}
+
+{% block header %}
+    {% include 'components/_header.html' %}
+    {{ super() }}
+
+    <header>
+        <div class="header-content">
+            <!-- Tu contenido de navegación aquí si lo necesitas -->
+        </div>
+        
+        <div class="header-title">
+            <h2>Editar {{ elemento.name }}</h2>
+            <a href="{{ url_for('show_elemento', number=elemento.number) }}" class="back-button">
+                <i class="fas fa-arrow-left"></i> Volver al elemento
+            </a>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="edit-form-container">
+    <form method="POST" action="{{ url_for('edit_elemento', number=elemento.number) }}" class="edit-form">
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="symbol">Símbolo:</label>
+                <input type="text" id="symbol" name="symbol" value="{{ elemento.symbol }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" value="{{ elemento.name }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Categoría:</label>
+                <input type="text" id="category" name="category" value="{{ elemento.category }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="group">Grupo:</label>
+                <input type="text" id="group" name="group" value="{{ elemento.group }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="period">Periodo:</label>
+                <input type="text" id="period" name="period" value="{{ elemento.period }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="atomic_mass">Masa Atómica:</label>
+                <input type="text" id="atomic_mass" name="atomic_mass" value="{{ elemento.atomic_mass }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="electron_config">Configuración Electrónica:</label>
+                <input type="text" id="electron_config" name="electron_config" value="{{ elemento.electron_config }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="discovery">Descubrimiento:</label>
+                <input type="text" id="discovery" name="discovery" value="{{ elemento.discovery }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="discoverer">Descubridor:</label>
+                <input type="text" id="discoverer" name="discoverer" value="{{ elemento.discoverer }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="density">Densidad:</label>
+                <input type="text" id="density" name="density" value="{{ elemento.density }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="melt">Punto de Fusión:</label>
+                <input type="text" id="melt" name="melt" value="{{ elemento.melt }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="boil">Punto de Ebullición:</label>
+                <input type="text" id="boil" name="boil" value="{{ elemento.boil }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="phase">Fase:</label>
+                <input type="text" id="phase" name="phase" value="{{ elemento.phase }}">
+            </div>
+        </div>
+        
+        <div class="form-group full-width">
+            <label for="summary">Resumen:</label>
+            <textarea id="summary" name="summary" rows="5">{{ elemento.summary }}</textarea>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn-save">
+                <i class="fas fa-save"></i> Guardar Cambios
+            </button>
+            <a href="{{ url_for('show_elemento', number=elemento.number) }}" class="btn-cancel">
+                <i class="fas fa-times"></i> Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

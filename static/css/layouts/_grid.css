@@ -1,0 +1,41 @@
+.grid {
+    display: grid;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+/* layouts/grid.css */
+.periodic-table {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(8px, 1fr));
+  }
+  
+  @media (min-width: 768px) {
+    .periodic-table {
+      grid-template-columns: repeat(18, minmax(60px, 1fr));
+    }
+    
+    /* Ajuste para los lantánidos y actínidos */
+    .element.lanthanide,
+    .element.actinide {
+      grid-column: span 2;
+    }
+  }

@@ -1,0 +1,109 @@
+/* Contenedor principal del detalle del elemento */
+.element-detail {
+    max-width: 100%;          /* Ocupa el ancho máximo disponible */
+    margin: 0 auto;           /* Centrado horizontalmente */
+    padding: 2rem;            /* Espaciado interno generoso */
+    border-radius: 10px;      /* Bordes redondeados */
+    background-color: white;  /* Fondo blanco para mejor contraste */
+    box-shadow: var(--shadow); /* Sombra usando variable CSS para consistencia */
+}
+
+/* Encabezado del detalle - contiene símbolo y nombre */
+.detail-header {
+    display: flex;            /* Diseño flexible para alinear items */
+    align-items: center;      /* Centrado vertical */
+    gap: 2rem;               /* Espacio entre elementos hijos */
+    margin-bottom: 2rem;     /* Margen inferior para separación */
+    padding-bottom: 1rem;    /* Espacio inferior interno */
+    border-bottom: 1px solid #eee; /* Línea divisoria sutil */
+}
+
+/* Estilos para el símbolo del elemento (ej: "H" para Hidrógeno) */
+.detail-symbol {
+    font-size: 5rem;          /* Tamaño grande para destacar */
+    font-weight: bold;        /* Negrita para mayor énfasis */
+    font-family: 'Orbitron', sans-serif; /* Fuente tecnológica/científica */
+    color: var(--primary-color); /* Color principal usando variable */
+}
+
+/* Contenedor del nombre y número atómico */
+.detail-name h1 {
+    font-size: 2.5rem;        /* Tamaño grande para el nombre */
+    color: var(--primary-color); /* Color principal consistente */
+    margin-bottom: 0.5rem;    /* Espacio inferior reducido */
+}
+
+.detail-name h2 {
+    font-size: 1.5rem;        /* Tamaño mediano para número atómico */
+    color: var(--text-color); /* Color de texto normal */
+    font-weight: normal;      /* Peso normal (no negrita) */
+}
+
+/* Grid para las propiedades del elemento */
+.detail-grid {
+    display: grid;                           /* Usa CSS Grid para layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 1.5rem;                            /* Espacio entre celdas */
+    margin-bottom: 2rem;                    /* Margen inferior para separación */
+}
+
+/* Tarjetas individuales de propiedades */
+.detail-card {
+    background-color: var(--background-color); /* Fondo usando variable */
+    padding: 1.5rem;                         /* Espaciado interno */
+    border-radius: 8px;                      /* Bordes redondeados */
+    box-shadow: var(--shadow);               /* Sombra consistente */
+}
+
+/* Títulos de las tarjetas de propiedades */
+.detail-card h3 {
+    color: var(--primary-color);             /* Color principal */
+    margin-bottom: 1rem;                     /* Espacio inferior */
+    display: flex;                           /* Flex para alinear icono y texto */
+    align-items: center;                     /* Centrado vertical */
+    gap: 10px;                              /* Espacio entre icono y texto */
+}
+
+/* Texto dentro de las tarjetas */
+.detail-card p {
+    margin-bottom: 0.5rem;    /* Margen inferior pequeño entre párrafos */
+    color: var(--text-color); /* Color de texto normal */
+}
+
+/* Sección de resumen/descripción del elemento */
+.summary {
+    margin-top: 2rem;                       /* Margen superior para separación */
+    padding: 1.5rem;                        /* Espaciado interno */
+    background-color: var(--background-color); /* Mismo fondo que las tarjetas */
+    border-radius: 8px;                     /* Bordes redondeados */
+    box-shadow: var(--shadow);               /* Sombra consistente */
+}
+
+.summary h3 {
+    color: var(--primary-color);             /* Color principal */
+    margin-bottom: 1rem;                     /* Espacio inferior */
+    display: flex;                           /* Flex para icono + texto */
+    align-items: center;                     /* Centrado vertical */
+    gap: 10px;                              /* Espacio entre icono y texto */
+}
+
+/* Botón para volver atrás */
+.back-button {
+    background-color: var(--secondary-color); /* Color secundario */
+    color: var(--light-text);                /* Texto claro para contraste */
+    text-decoration: none;                   /* Sin subrayado */
+    padding: 0.5rem 1rem;                    /* Espaciado interno */
+    border-radius: 4px;                      /* Bordes ligeramente redondeados */
+    transition: var(--transition);           /* Transición suave con variable */
+    display: flex;                           /* Flex para alinear icono + texto */
+    float: inline-end;                       /* Posicionamiento a la derecha */
+    align-items: center;                     /* Centrado vertical */
+    gap: 5px;                               /* Espacio entre icono y texto */
+    width: 20%;                             /* Ancho fijo (considerar responsividad) */
+}
+
+/* Efecto hover para el botón */
+.back-button:hover {
+    background-color: #2980b9;  /* Color azul más oscuro al pasar el ratón */
+    transform: translateX(-3px); /* Ligero movimiento hacia la izquierda */
+}

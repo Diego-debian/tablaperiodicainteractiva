@@ -1,0 +1,35 @@
+/* 
+ * Estilos base para el cuerpo (body) del documento
+ * Define la fuente principal que se aplicará a todo el documento,
+ * a menos que sea sobrescrita por elementos específicos
+ */
+ body {
+    font-family: 'Roboto', sans-serif;  /* Fuente principal: Roboto con fallback a sans-serif */
+}
+
+/*
+ * Estilos para los encabezados (h1-h6)
+ * Proporciona un margen inferior consistente para todos los títulos
+ */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;  /* Espaciado inferior de 0.5rem para separación visual */
+}
+
+/*
+ * Clase para símbolos especiales
+ * Usa una fuente tecnológica (Orbitron) para elementos que requieren
+ * un estilo más futurista o técnico, con peso de fuente en negrita
+ */
+.symbol {
+    font-family: 'Orbitron', sans-serif;  /* Fuente alternativa para símbolos */
+    font-weight: bold;                   /* Negrita para mayor énfasis */
+}
+
+/*
+ * Clase para detalles de símbolos
+ * Similar a .symbol pero sin el peso negrita, para usos donde
+ * se necesita la misma fuente pero con peso normal
+ */
+.detail-symbol {
+    font-family: 'Orbitron', sans-serif;  /* Misma fuente tecnológica pero con peso normal */
+}

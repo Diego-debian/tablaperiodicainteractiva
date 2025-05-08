@@ -1,0 +1,20 @@
+# Ignorar archivos de entornos virtuales Python
+venv/
+.env
+
+# Ignorar archivos compilados
+*.pyc
+__pycache__/
+instance/
+models/
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar directorios de dependencias
+node_modules/
+bower_components/
+
+# Ignorar archivos de IDE
+.idea/
+.vscode/

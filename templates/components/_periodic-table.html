@@ -1,0 +1,20 @@
+<div class="periodic-table">
+    {% for elemento in elementos %}
+        <div class="element {{ elemento.category|replace(' ', '-')|lower }}" 
+            data-atomic-number="{{elemento.number}}"
+             data-number="{{ elemento.number }}"
+             data-name="{{ elemento.name }}"
+             data-symbol="{{ elemento.symbol }}"
+             onclick="window.location.href='{{ url_for('show_elemento', number=elemento.number)}}'">
+            <div class="number">{{ elemento.number }}</div>
+            <div class="symbol">{{ elemento.symbol }}</div>
+            <div class="name">{{ elemento.name }}</div>
+            <div class="element-hover">
+                <h3>{{ elemento.name }} ({{ elemento.symbol }})</h3>
+                <p>Número atómico: {{ elemento.number }}</p>
+                <p>Masa atómica: {{ elemento.atomic_mass }} u</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>

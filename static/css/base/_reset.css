@@ -1,0 +1,26 @@
+/* Reset y estilos base para todos los elementos */
+/* -------------------------------------------- */
+/* Aplica el modelo de caja border-box a todos los elementos */
+/* Elimina márgenes y rellenos por defecto */
+* {
+    box-sizing: border-box;  /* El padding y border se incluyen en el ancho/alto del elemento */
+    margin: 0;               /* Elimina los márgenes por defecto del navegador */
+    padding: 0;              /* Elimina el relleno por defecto del navegador */
+}
+
+/* Estilos generales del cuerpo del documento */
+/* ------------------------------------------ */
+body {
+    font-family: 'Roboto', sans-serif;  /* Establece la fuente principal para todo el documento */
+    background-color: var(--background-color); /* Color de fondo usando variable CSS */
+    color: var(--text-color);           /* Color de texto usando variable CSS */
+    line-height: 1.6;                   /* Espaciado entre líneas para mejor legibilidad */
+}
+
+/* Contenedor principal para el contenido */
+/* ------------------------------------- */
+.container {
+    max-width: 1200px;       /* Ancho máximo del contenedor */
+    margin: 2rem auto;       /* Margen superior e inferior de 2rem y centrado horizontal */
+    padding: 0 20px;         /* Relleno interno izquierdo y derecho */
+}
