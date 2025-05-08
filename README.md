@@ -89,7 +89,7 @@ Pip descargará e instalará todas las librerías especificadas en el archivo de
 5. Ejecuta el programa
 
 ```bash
-python app,py
+python app.py
 ```
 
  ![Tabla periodica](img/tabla_1.gif) 
